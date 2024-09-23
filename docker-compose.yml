@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./task-management-backend
+    ports:
+      - '4000:4000'
+    env_file:
+      - ./task-management-backend/.env
+    volumes:
+      - ./task-management-backend:/app
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+
+  frontend:
+    build: ./task-management-frontend1
+    ports:
+      - '3000:3000'
+    env_file:
+      - ./task-management-frontend1/.env.local
+    volumes:
+      - ./task-management-frontend1:/app
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
+    driver: bridge

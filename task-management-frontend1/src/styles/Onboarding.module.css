@@ -1,0 +1,61 @@
+.onboardingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Takes up the full viewport height */
+    text-align: center;
+    background: linear-gradient(to bottom right, #a8edea, #fed6e3); /* Beautiful gradient for the background */
+    padding: 20px;
+    color: #fff; /* Ensure white text for contrast */
+  }
+  
+  .welcomeText {
+    font-size: 3rem; /* Larger, bold welcome text */
+    font-weight: bold;
+    color: #ffffffdf; /* White color for the title */
+    margin-bottom: 10px;
+  }
+  
+  .descriptionText {
+    font-size: 1.2rem; /* Slightly larger text for description */
+    color: #332a2a;
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+  
+  .illustration {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  
+  .actionButton {
+    background-color: #272222;
+    color: #e8ebee;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 15px;
+  }
+  
+  .actionButton:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .loginLink {
+    font-size: 1.1rem;
+    color: #272222;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  
+  .loginLink:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,157 @@
+/* TaskBoard.module.css */
+
+/* Wrapper for the entire board with a background image and centered layout */
+.board {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+  backdrop-filter: blur(10px); /* Optional: Add a subtle glass effect */
+}
+
+/* The background wrapper for the task board */
+.boardWrapperImage {
+  background: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg') center/cover no-repeat;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensures it covers the full height of the viewport */
+  overflow-y: hidden; /* Prevent vertical scrolling of the entire board */
+}
+
+/* Task column styling with clean, modern design */
+.column {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 300px;
+  max-width: 300px;
+  max-height: 500px; /* Fixed height for the column */
+  overflow-y: auto;  /* Enables vertical scrolling */
+  backdrop-filter: blur(6px); /* Continue the glass effect on each column */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Shadow for a floating effect */
+  transition: transform 0.3s ease;
+}
+.columnHeader {
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.addTaskIcon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #2c3f2c;
+}
+
+
+.column::-webkit-scrollbar {
+  width: 8px;
+}
+
+.column::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.column:hover {
+  transform: translateY(-5px); /* Lift column slightly on hover */
+}
+
+
+/* Title for each column with a subtle dot indicator */
+.columnTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #383e45;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.pendingDot {
+  background-color: #ffcc00;
+}
+
+.inProgressDot {
+  background-color: #0099ff;
+}
+
+.completedDot {
+  background-color: #66cc66;
+}
+
+/* Task Card Styling */
+.taskCard {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.taskCard:hover {
+  background-color: rgba(255, 255, 255, 1); /* Slight change on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Lift effect on hover */
+}
+
+.taskTitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.icon:hover {
+  color: #333;
+}
+
+/* Spinner for loading */
+.spinner {
+  font-size: 2rem;
+  color: #fff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Centering loading/error messages */
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.errorText {
+  color: #ff4d4d;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
